@@ -43,11 +43,19 @@ module Ransack
           base.send("#{key}=", value)
         elsif @context.ransackable_scope?(key, @context.object)
           add_scope(key, value)
+        elsif %w(pd).include?(key)
+          Array(value).each do |pd|
+            add_polymorphic_dependency(pd)
+          end
         elsif !Ransack.options[:ignore_unknown_conditions]
           raise ArgumentError, "Invalid search term #{key}"
         end
       end
       self
+    end
+
+    def add_polymorphic_dependency(name)
+      node = Ransack::Nodes::Attribute.new(context, name)
     end
 
     def sorts=(args)
