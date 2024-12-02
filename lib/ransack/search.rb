@@ -52,6 +52,8 @@ module Ransack
           add_scope(key, value)
         elsif base.attribute_method?(key)
           base.send("#{key}=", value)
+        elsif 'pd' == key
+          Array(value).each { |pd| add_polymorphic_dependency(pd) }
         elsif !Ransack.options[:ignore_unknown_conditions] || !@ignore_unknown_conditions
           raise ArgumentError, "Invalid search term #{key}"
         end
@@ -129,6 +131,12 @@ module Ransack
     end
 
     private
+
+    def add_polymorphic_dependency(name)
+      Ransack::Nodes::Attribute.new(context, name).tap do |a|
+        context.bind(a, a.name)
+      end
+    end
 
     def add_scope(key, args)
       sanitized_args = if Ransack.options[:sanitize_scope_args] && !@context.ransackable_scope_skip_sanitize_args?(key, @context.object)
