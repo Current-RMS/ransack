@@ -35,7 +35,7 @@ module Ransack
         # For overriding with a whitelist array of strings.
         #
         def ransackable_attributes(auth_object = nil)
-          @ransackable_attributes ||= deprecated_ransackable_list(:ransackable_attributes)
+          @ransackable_attributes = deprecated_ransackable_list(:ransackable_attributes)
         end
 
         # Ransackable_associations, by default, returns the names
@@ -43,7 +43,7 @@ module Ransack
         # For overriding with a whitelist array of strings.
         #
         def ransackable_associations(auth_object = nil)
-          @ransackable_associations ||= deprecated_ransackable_list(:ransackable_associations)
+          @ransackable_associations = deprecated_ransackable_list(:ransackable_associations)
         end
 
         # Ransortable_attributes, by default, returns the names
