@@ -2,30 +2,40 @@
 
 ## Unreleased
 
-## 🚀 Features
+## 4.2.1 - 2024-8-11
+
+* Fix Rails 7.1.x compatibility
+
+## 4.2.0 - 2024-7-10
+
+* Add Rails 7.2 support by @robinator and @gregmolnar
+
+## 4.1.0 - 2023-10-23
+
+### 🚀 Features
 
 * Add Rails 7.1.0 support by @yuki24 in https://github.com/activerecord-hackery/ransack/pull/1439
 
-## 🐛 Bug Fixes
+### 🐛 Bug Fixes
 
 * Fix wrong table aliases in Rails 6.1 by @oneiros in https://github.com/activerecord-hackery/ransack/pull/1447
 
-## 💦 Compatibility
+### 💦 Compatibility
 
 * Drop Ruby 2.7 support by @deivid-rodriguez in https://github.com/activerecord-hackery/ransack/pull/1449
 
-## 📝  Documentation
+### 📝  Documentation
 
 * Update blog post link by @meg-gutshall in https://github.com/activerecord-hackery/ransack/pull/1425
 * Add namespaced example of Polymorphic search by @craigmcnamara in https://github.com/activerecord-hackery/ransack/pull/1422
 * Update sorting example to be self-contained by @kinduff in https://github.com/activerecord-hackery/ransack/pull/1442
 
-## 💅 Polish
+### 💅 Polish
 
 * Minor updates for Rails 7.1 by @deivid-rodriguez in https://github.com/activerecord-hackery/ransack/pull/1448
 * Don't mention Ruby compatibility in contribution instructions by @deivid-rodriguez in https://github.com/activerecord-hackery/ransack/pull/1452
 
-## 🏠 Internal
+### 🏠 Internal
 
 * Bump @sideway/formula from 3.0.0 to 3.0.1 in /docs by @dependabot in https://github.com/activerecord-hackery/ransack/pull/1417
 * Bump webpack from 5.74.0 to 5.76.1 in /docs by @dependabot in https://github.com/activerecord-hackery/ransack/pull/1412
@@ -41,7 +51,7 @@
 
 ### 💥 Breaking Changes
 
-* **[SECURITY]** Require explict allowlisting of attributes and associations by @deivid-rodriguez in https://github.com/activerecord-hackery/ransack/pull/1400
+* **[SECURITY]** Require explicit allowlisting of attributes and associations by @deivid-rodriguez in https://github.com/activerecord-hackery/ransack/pull/1400
 * Remove Polyamorous entrypoint by @scarroll32 in https://github.com/activerecord-hackery/ransack/pull/1370
 * Remove dead MongoDB code by @scarroll32 in https://github.com/activerecord-hackery/ransack/pull/1345
 
