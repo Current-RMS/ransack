@@ -152,6 +152,7 @@ module Ransack
     end
 
     def ransackable_alias(str)
+      return nil if str.nil?
       klass._ransack_aliases.fetch(str, klass._ransack_aliases.fetch(str.to_sym, str))
     end
 
